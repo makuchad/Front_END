@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <title>Animacje - poradnik dla początkującego</title>
+    <script src="./js/script.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1>Animacje dla każdego</h1>
+        </header>
+        <nav>
+            <h2>Menu</h2>
+            <ul>
+                <li><button>Wstęp do animacji</button></li>
+                <li><button>Słowa kluczowe</button></li>
+                <li><button>Pierwsza animacja</button></li>
+                <li><button>Podpięcie animacji</button></li>
+                <li><button>Właściwości animacji</button></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Witaj w moim poradniku to CSS'owych animacji!</h2>
+            <p>Nauczysz się tutaj jak tworzyć i wykorzystywać podstawowe,
+                później bardziej zaawansowane animacje, na swoich stronach.</p>
+            <p>Strona na której poszczególne elementy poruszają się, zmieniają w czasie używania strony są ciekawsze i
+                przyjemniejsze w użyciu dla odbiorcy. Dlatego myślę, że każdy początkujący programista, który chcę pisać
+                własne strony powinien opanować dobrze ten temat.</p>
+            <p>Poradnik podzieliłem na kilka rozdziału tak by był przejrzysty i funckjonalny.</p>
+            <ol>
+                <li>Wstęp do animacji.</li>
+                <li>Słowa kluczowe.</li>
+                <li>Pierwsza animacja.</li>
+                <li>Podpięcie animacji.</li>
+                <li>Właściwości animacji.</li>
+            </ol>
+            <p>Zapraszam do poradnika!</p>
+            <hr />
+            <h3>Rozdział 1: Wstęp do animacji</h3>
+            <p>
+                Animacje CSS można stosować do zmieniania tekstu, obrazków czy innych elementów na stronie. Mowa tu o
+                ich wielkości,
+                kolorze czy położeniu.
+                Przykładowa animacja pokazana będzie poniżej.
+            </p>
+            <div class="example">
+                <div class="test"></div>
+            </div>
+            <p>Jest to prosta animacja na której przykładzie rozpoczniemy dalszą naukę.</p>
+            <hr />
+            <h3>Rozdział 2: Słowa kluczowe</h3>
+            <p>Słowem kluczowym do stworzenia animacji jest <i>@keyframes</i>. Umieszcza się je w kodzie arkusza styli.
+                Nastepnie
+                podaje się nazwę naszej animacji oraz otwiera się klamry.</p>
+            <p>Przykład:</p>
+            <div class="code">
+                <img src="./img/screen1.png" alt="screen1">
+            </div>
+            <p>Kolejne słowa kluczowe w animacji to <i>"from"</i> oraz <i>"to"</i>, które określają stan początkowy i
+                końcowy
+                animacji.
+                Po nich również należy otworzyć klamry.</p>
+            <p>Przykład:</p>
+            <div class="code">
+                <img src="./img/screen2.png" alt="screen2">
+            </div>
+            <p>Oprócz tego możemy używać wartości procentowych, by móc określić więcej etapów animacji.</p>
+            <p>Przykład:</p>
+            <div class="code">
+                <img src="./img/screen3.png" alt="screen3">
+            </div>
+            <hr />
+            <h3>Rozdział 3: Pierwsza animacja</h3>
+            <p>Stwórzmy naszą pierwszą animacje.</p>
+            <p>Zacznijmy od przykładu pokazanego w pierwszym rozdziale. W tej animacji kwadrat na stronie poruszał się
+                od prawej
+                strony zmieniając kolor z czarnego na biały. Przjedźmy więc do naszego CSS'a.</p>
+            <p>Tworzymy animację o nazwie np. <i>"przesuwanie"</i> wraz z <i>"from"</i> i <i>"to"</i>. Kwadrat ma się
+                przesuwać od
+                prawego końca więc pod słowem <i>"from"</i>
+                ustawiamy wartość atrybutu <i>"left"</i> jako 100%. Mówi nam on o ile bedzie oddalony element od
+                nominalnego miejsca
+                na stronie.
+                Następnie pod słowem <i>"to"</i> wpisujemy <i>"left: 0%;"</i></p>
+            <p>Kod:</p>
+            <div class="code">
+                <img src="./img/screen4.png" alt="screen4">
+            </div>
+            <p>Teraz zajmijmy się kolorem. Animacja miała zacząć się od koloru czarnego, przechodząc do białego. Należy
+                więc w
+                odpowiednich miejscach wpisać <i>"background-color: black;"</i> oraz <i>"background-color: white;"</i>
+            </p>
+            <p>Kod:</p>
+            <div class="code">
+                <img src="./img/screen5.png" alt="screen5">
+            </div>
+            <p>By nasza animacja wyglądała ciekawiej, możemy również rotować elementem czy zmieniać jego wielkość.
+                Wykorzystujemy do
+                tego <i>"transform"</i>. Pobawmy się trochę naszą animacją.</p>
+            <p>Zacznijmy od wielkości. Za nią odpowiedzialny jest atrybut <i>"scale"</i> w którym podajemy wartość
+                liczbową np. 2,
+                wtedy element będzie powiększony dwukrotnie.</p>
+            <p>By obracać element, używamy <i>"rotate"</i> w którym podajemy ilość stopni o ile ma się obrocić element,
+                następnie
+                słowo <i>"deg"</i> np. '360deg', wtedy element obróci się wokół własnej osi w lewo (w przypadku ujemnej
+                wartości - w
+                prawo).</p>
+            <p>Przykładowy kod:</p>
+            <div class="code">
+                <img src="./img/screen6.png" alt="screen6">
+            </div>
+            <p>Z podanymi atrybutami można stworzyć całkiem ciekawą animacje np. na załadowanie strony i pojawiający się
+                na niej
+                element np. logo strony. By nadać lepszy efekt można użyć atrybutu <i>"opacity"</i>, który przyjmuje
+                wartości od 0
+                do 1, gdzie 0 to niewidoczny element a 1 to widoczny element bez przezroczystości.</p>
+            <p>Przykładowy kod:</p>
+            <div class="code">
+                <img src="./img/screen7.png" alt="screen7">
+            </div>
+            <hr />
+            <h3>Rozdział 4: Podpięcie animacji</h3>
+            <p>W poprzednim rozdziale stworzyliśmy naszą pierwszą animacje, jednak nie jest ona używana na stronie. By
+                tak się stało
+                musimy stworzyć jakis element i przypisać mu animację w CSS'sie. Jak to zrobić?</p>
+            <p>Stwórzmy więc na stronie kwadrat o rozmiarach 100x100 pixeli. Teraz należy użyć atrybutu
+                <i>"animation"</i>, po
+                dwukropku wpisujemy nazwę naszej animacji oraz czas w trwanie w postaci np. "3s" czyli poprostu 3
+                sekundy.</p>
+            <p>Kod HTML:</p>
+            <div class="code">
+                <img src="./img/screen8.png" alt="screen8">
+            </div>
+            <p>Kod CSS:</p>
+            <div class="code">
+                <img src="./img/screen9.png" alt="screen9">
+            </div>
+            <p>Efekt:</p>
+            <div class="example">
+                <div class="test"></div>
+            </div>
+            <p>Jednak na twojej stronie animacja wykonuje się tylko raz, potem element zostaje na swoim miejscu. Do tego
+                służą
+                osobne właściwości o których opowiem w nastepnym rozdziale.</p>
+                <hr />
+                <h3>Rozdział 5: Właściwości animacji</h3>
+            <p>Tak jak wspominałem w poprzednim rozdziale, można nadać animacjom różne właściwości. Najważniejsze z nich postaram
+                się omówić w tym rozdziale.</p>
+            <p>Zacznijmy od tego, że animacje można podpiąć w jeszcze inny sposób, pokazany poniżej:</p>
+            <div class="code">
+                <img src="./img/screen10.png" alt="screen10">
+            </div>
+            <p>Jak widać podajemy jej imię, a poniżej czas trwania. Jest to klucz do zrozumienia nadawania innych właściwości. Są to
+                między innymi:</p>
+            <ol>
+                <li>
+                    Opóźnienie
+                    <p>W CSS'sie: <i>"animation-delay", wartość podawana w sekundach tak samo jak czas trwania.</i></p>
+                </li>
+                <li>
+                    Powatarzalność
+                    <p>W CSS'sie: <i>"animation-iteration-count"</i>, wartość to ilość powtórzeń np. 3 lub <i>"infinite"</i>, wtedy
+                        animacja zapętli się na stronie.</p>
+                </li>
+                <li>
+                    Kierunek
+                    <p>W CSS'sie: <i>"animation-direction"</i>, domyślna wartość to <i>"normal"</i>, przeciwieństwo to
+                        <i>"reverse"</i>, wtedy animacja wykona się od tyłu</p>
+                    <p>Inne wartości to np. <i>"alternate"</i>, które spowoduje, że animacja wykona się normalnie, a następnie do
+                        tyłu, <i>"alternate-reverse"</i>, wykona animacje od tyłu, następnie normalnie.</p>
+                </li>
+                <li>
+                    Zmiana prędkości
+                    <p>W CSS'sie: <i>"animation-timing-function".</i></p>
+                    <p>Dostępne wartości to <i>"linear", "ease", "ease-in", "ease-out", "ease-in-out"</i>. <i>"Linear"</i> sprawia,
+                        że animacja ma tą samą prędkość w czasie trwania.
+                        Wartości z <i>"ease"</i> sprawiają, że w pewnych momentach animacja zwalnia i przyspiesza.</p>
+                </li>
+            </ol>
+            <p id="last-element">Podana wiedza wystarcza by stworzyć naprawdę ciekawe animacje na waszych stronach. Zachęcam do tworzenia własnych
+                projektów z animacjami tak, by dobrze opanować temat.</p>
+            </main>
+
+        <footer>&copy; Imie Nazwisko 2022</footer>
+    </div>
+</body>
+
+</html>
